@@ -1,10 +1,7 @@
 title: 调整tomcat vm内存大小
 author: weiyonghua
-tags:
-  - tomcat
-  - vm
-categories:
-  - 开发工具
+tags: []
+categories: []
 date: 2017-03-13 14:17:00
 ---
 

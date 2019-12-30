@@ -1,13 +1,13 @@
 # menu
 menu:
-  Home: 主页
-  Archives: 归档
-  Categories: 分类
-  Tags: 标签
-  Repository: 仓库
+  Home: .
+  Archives: archives
+  Categories: categories
+  Tags: tags
+  Repository: repository
   #Books: 豆瓣书单
-  Links: 友链
-  About: 关于
+  Links: links
+  About: about
 
 # Enable/Disable menu icons
 menu_icons:

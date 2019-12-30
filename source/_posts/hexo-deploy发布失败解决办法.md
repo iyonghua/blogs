@@ -1,9 +1,7 @@
 title: hexo deploy发布失败解决办法
 tags:
   - hexo
-  - deploy
-categories:
-  - FAQ
+categories: []
 author: weiyonghua
 date: 2017-03-03 11:16:00
 ---

@@ -1,8 +1,8 @@
----
 title: 'jvm系列(八):jvm知识点总览-高级Java工程师面试必备'
-date: 2017-03-10 08:26:19
-tags: [java,jvm,面试]
-categories: [术业专攻]
+tags:
+  - 面试
+categories: []
+date: 2017-03-10 08:26:00
 ---
 
 
