@@ -1,0 +1,6 @@
+- name: blog1
+  url: https://xxxx.com
+- name: blog2
+  url: http://xxx.com/
+- name: blog3
+  url: http://xxx.io/
