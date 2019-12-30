@@ -1,6 +1,6 @@
 # menu
 menu:
-  Home: .
+  Home: 主页
   Archives: 归档
   Categories: 分类
   Tags: 标签
@@ -47,7 +47,7 @@ config:
 
 # Pagination
 pagination:
-  number: false
+  number: true
   prev: 
     alwayShow: true
   next:

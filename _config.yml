@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: weiyonghua's blogs
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: weiyonghua
+language: zh-CN
 timezone: ''
 
 # URL
@@ -100,4 +100,4 @@ theme: pure
 deploy:
 - type: git
   repo: https://github.com/iyonghua/blogs.git
-  branch: gh-pages
+  branch: master
