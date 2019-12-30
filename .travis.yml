@@ -20,13 +20,22 @@ script:
     - hexo clean # 清除
     - hexo g # 生成
 after_script:
+    - cp -r public/ public_github
     - cd ./public
     - git init
     - git config user.name "weiyonghua" # 修改name
     - git config user.email "weiyonghua16@gmail.com" # 修改email
     - git add .
     - git commit -m "Travis CI Auto Builder"
-    - git push --force --quiet "https://weiyonghua:${giteeToken}@gitee.com/weiyonghua/blogs.git" master:gh-pages # GH_TOKEN是在Travis中配置token的名称
+    - git push --force --quiet "https://weiyonghua:${giteeToken}@gitee.com/weiyonghua/blogs.git" master:gh-pages # giteeToken是在Travis中配置token的名称
+    - cd ..
+    - cd ./public_github
+    - git init
+    - git config user.name "iyonghua" # 修改name
+    - git config user.email "weiyonghua16@gmail.com" # 修改email
+    - git add .
+    - git commit -m "Travis CI Auto Builder"
+    - git push --force --quiet "https://${githubToken}@github.com/iyonghua/blogs.git" master:gh-pages # githubToken是在Travis中配置token的名称
 branches:
     only:
         - master #只监测hexo分支，hexo是我的分支的名称，可根据自己情况设置
