@@ -1,5 +1,8 @@
 language: node_js
 node_js: --lts
+cache:
+  directories:
+    - node_modules
 install:
     - npm install # 安装hexo及插件
 script:
@@ -12,7 +15,7 @@ after_script:
     - git config user.email "weiyonghua16@gmail.com" # 修改email
     - git add .
     - git commit -m "Travis CI Auto Builder"
-    - git push --force --quiet "https://${TravisToken}@github.com/iyonghua/blogs.git" master:master # GH_TOKEN是在Travis中配置token的名称
+    - git push --force --quiet "https://${TravisToken}@github.com/iyonghua/blogs.git" master:gh-pages # GH_TOKEN是在Travis中配置token的名称
 branches:
     only:
         - master #只监测hexo分支，hexo是我的分支的名称，可根据自己情况设置
