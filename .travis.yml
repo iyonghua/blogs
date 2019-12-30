@@ -1,8 +1,19 @@
 language: node_js
 node_js: --lts
+sudo: required # 需要管理员权限
+dist: bionic # 指定 CI 系统版本为 Ubuntu16.04 LTS
 cache:
   directories:
     - node_modules
+before_install: 
+  - export TZ='Asia/Shanghai' #配置时区为东八区UTC+8
+  - npm install -g hexo --save
+  - npm install hexo-cli > /dev/null # 安装 hexo
+  #  - git config user.name iyonghua
+  #  - git config user.email weiyonghua16@gmail.com
+  #  - sed -i'' "s~giteeToken~${giteeToken}~" _config.yml # 配置部署用到的TOKEN
+  #  - sed -i'' "s~xxx_github_xxx~${githubToken}~" _config.wikitten.yml
+  #  - sudo apt-get install libpng16-dev # 安装 libpng16-dev CI编译出现相关报错时请取消注释
 install:
     - npm install # 安装hexo及插件
 script:
@@ -11,11 +22,11 @@ script:
 after_script:
     - cd ./public
     - git init
-    - git config user.name "iyonghua" # 修改name
+    - git config user.name "weiyonghua" # 修改name
     - git config user.email "weiyonghua16@gmail.com" # 修改email
     - git add .
     - git commit -m "Travis CI Auto Builder"
-    - git push --force --quiet "https://${TravisToken}@github.com/iyonghua/blogs.git" master:gh-pages # GH_TOKEN是在Travis中配置token的名称
+    - git push --force --quiet "https://weiyonghua:${giteeToken}@gitee.com/weiyonghua/blogs.git" master:gh-pages # GH_TOKEN是在Travis中配置token的名称
 branches:
     only:
         - master #只监测hexo分支，hexo是我的分支的名称，可根据自己情况设置

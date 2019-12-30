@@ -98,6 +98,9 @@ theme: pure
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: https://github.com/iyonghua/blogs.git
+  branch: gh-pages
+- type: git
+  repo: https://weiyonghua:giteeToken@gitee.com/weiyonghua/blogs.git
   branch: gh-pages
