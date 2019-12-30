@@ -6,7 +6,7 @@
   <link href="/blogs/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-24T09:48:09.254Z</updated>
+  <updated>2019-12-30T09:37:51.211Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,18 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>国内加速访问Github的办法，超级简单</title>
+    <link href="http://yoursite.com/2019/12/30/%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AEGithub%E7%9A%84%E5%8A%9E%E6%B3%95%EF%BC%8C%E8%B6%85%E7%BA%A7%E7%AE%80%E5%8D%95/"/>
+    <id>http://yoursite.com/2019/12/30/%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AEGithub%E7%9A%84%E5%8A%9E%E6%B3%95%EF%BC%8C%E8%B6%85%E7%BA%A7%E7%AE%80%E5%8D%95/</id>
+    <published>2019-12-30T09:35:00.000Z</published>
+    <updated>2019-12-30T09:37:51.211Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="国内加速访问Github的办法，超级简单"><a href="#国内加速访问Github的办法，超级简单" class="headerlink" title="国内加速访问Github的办法，超级简单"></a>国内加速访问Github的办法，超级简单</h1><p><a href="//www.zhihu.com/people/kuo-zhan-mi-extfans" target="_blank" rel="noopener"><img src="https://pic2.zhimg.com/v2-013471d1e9c3de2c1f4a3b4ba1be5ba1_xs.jpg" alt="扩展迷Extfans"></a></p><p><a href="//www.zhihu.com/people/kuo-zhan-mi-extfans" target="_blank" rel="noopener">扩展迷Extfans</a></p><p>发现有趣的网站，玩转Chrome扩展，尽在扩展迷Extfans</p><p>37 人赞同了该文章</p><p>自从GitHub私有库免费后，又涌入了一大批开发爱好者。</p><p>但国内访问GitHub的速度实在是慢得一匹，在clone仓库时甚至只有10k以下的速度，大大影响了程序员的交友效率。<br><img src="https://pic4.zhimg.com/v2-dec4f419d4d8ba5ba1ed260eaebab4cb_b.jpg" alt="">)<img src="https://pic4.zhimg.com/80/v2-dec4f419d4d8ba5ba1ed260eaebab4cb_hd.jpg" alt=""><br>GitHub在国内访问速度慢的问题原因有很多，但最直接和最主要的原因是GitHub的分发加速网络的域名遭到dns污染。</p><p>今天我们就介绍通过修改系统hosts文件的办法，绕过国内dns解析，直接访问GitHub的CDN节点，从而达到加速的目的。</p><p>不需要科（）学（）上网，也不需要开代理加速器。</p><p>一、打开<a href="https://link.zhihu.com/?target=http%3A//IPAddress.com">http://IPAddress.com</a>网站，查询下面3个网址对应的IP地址</p><ol><li><p><a href="https://link.zhihu.com/?target=http%3A//github.com">http://github.com</a></p></li><li><p><a href="https://link.zhihu.com/?target=http%3A//assets-cdn.github.com">http://assets-cdn.github.com</a></p></li><li><p><a href="https://link.zhihu.com/?target=http%3A//github.global.ssl.fastly.net">http://github.global.ssl.fastly.net</a><br><img src="https://pic4.zhimg.com/v2-002f06094e4bab7ef86fe0d6eb086883_b.jpg" alt="">)<img src="https://pic4.zhimg.com/80/v2-002f06094e4bab7ef86fe0d6eb086883_hd.jpg" alt=""><br>二、修改本地电脑系统hosts文件</p></li></ol><p>路径 C:\Windows\System32\drivers\etc</p><p>直接在最后加入以下代码（此时可能需要管理员权限,可以将hosts复制到桌面，修改好了再复制回去覆盖原先的）：</p><p>192.30.253.112 <a href="https://link.zhihu.com/?target=http%3A//github.com">http://github.com</a></p><p>151.101.184.133 <a href="https://link.zhihu.com/?target=http%3A//assets-cdn.github.com">http://assets-cdn.github.com</a></p><p>151.101.185.194 <a href="https://link.zhihu.com/?target=http%3A//github.global.ssl.fastly.net">http://github.global.ssl.fastly.net</a><br><img src="https://pic1.zhimg.com/v2-a99ec919d7147d655465e68fc5e44054_b.jpg" alt=""><br><img src="https://pic1.zhimg.com/80/v2-a99ec919d7147d655465e68fc5e44054_hd.jpg" alt=""><br>三、刷新系统dns缓存</p><p>用WIN+R快捷键打开运行窗口，输入命令：cmd并回车进入命令行窗口。</p><p>接着输入命令：ipconfig /flushdns回车后执行刷新本地dns缓存数据即可。<br><img src="https://pic4.zhimg.com/v2-bbf2bd87a4ecc7a6f8b11a664a18e45b_b.jpg" alt=""><br><img src="https://pic4.zhimg.com/80/v2-bbf2bd87a4ecc7a6f8b11a664a18e45b_hd.jpg" alt=""><br>内网限速的情况下效果如图所示，根据网上的普遍反馈来看，达到10m/s不是问题。<br><img src="https://pic3.zhimg.com/v2-8c4537a8eb0a3afdf31d8893dee90d7a_b.jpg" alt="">)<img src="https://pic3.zhimg.com/80/v2-8c4537a8eb0a3afdf31d8893dee90d7a_hd.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;国内加速访问Github的办法，超级简单&quot;&gt;&lt;a href=&quot;#国内加速访问Github的办法，超级简单&quot; class=&quot;headerlink&quot; title=&quot;国内加速访问Github的办法，超级简单&quot;&gt;&lt;/a&gt;国内加速访问Github的办法，超级简单&lt;/h1&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="github" scheme="http://yoursite.com/categories/github/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="http://yoursite.com/2019/12/24/hello-world/"/>
     <id>http://yoursite.com/2019/12/24/hello-world/</id>
     <published>2019-12-24T09:47:59.000Z</published>
-    <updated>2019-12-24T09:48:09.254Z</updated>
+    <updated>2019-12-30T09:33:36.213Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><p><img src="https://i.loli.net/2019/12/24/9e2uMScnYhJWDyr.jpg" alt="300.jpg"></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><a id="more"></a>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/12/24/9e2uMScnYhJWDyr.jpg&quot; alt=&quot;300.jpg&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
@@ -55,7 +78,7 @@
     <link href="http://yoursite.com/2017/03/13/ed/%E8%B0%83%E6%95%B4tomcat-vm%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F-2/"/>
     <id>http://yoursite.com/2017/03/13/ed/%E8%B0%83%E6%95%B4tomcat-vm%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F-2/</id>
     <published>2017-03-13T06:17:00.000Z</published>
-    <updated>2017-04-21T06:02:16.026Z</updated>
+    <updated>2019-12-30T07:59:54.956Z</updated>
     
     <content type="html"><![CDATA[<p><strong>在tomcat vm启动参数中调整虚拟机内存大小：</strong></p><blockquote><p>-server -XX:PermSize=64M -XX:MaxPermSize=512m -Xms512m -Xmx1024m</p></blockquote><p><img src="http://img.blog.csdn.net/20170421134047832?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VpeW9uZ2h1YTE2/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p><img src="http://img.blog.csdn.net/20170421134119849?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VpeW9uZ2h1YTE2/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>]]></content>
     
