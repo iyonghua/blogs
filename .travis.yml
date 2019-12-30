@@ -1,9 +1,18 @@
 language: node_js
 node_js: --lts
-before_script:
-  - git config user.name "YOUR_NAME"
-  - git config user.email "YOUR_EMAIL"
-  - sed -i'' "s~https://github.com/iyonghua/blogs.git~https://${TravisToken}@github.com/iyonghua/blogs.git~" _config.yml
+install:
+    - npm install # 安装hexo及插件
 script:
-  - hexo g
-  - hexo d
+    - hexo clean # 清除
+    - hexo g # 生成
+after_script:
+    - cd ./public
+    - git init
+    - git config user.name "iyonghua" # 修改name
+    - git config user.email "weiyonghua16@gmail.com" # 修改email
+    - git add .
+    - git commit -m "Travis CI Auto Builder"
+    - git push --force --quiet "https://${TravisToken}@github.com/iyonghua/blogs.git" master:master # GH_TOKEN是在Travis中配置token的名称
+branches:
+    only:
+        - master #只监测hexo分支，hexo是我的分支的名称，可根据自己情况设置
