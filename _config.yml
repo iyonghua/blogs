@@ -101,3 +101,6 @@ deploy:
 - type: git
   repo: https://github.com/iyonghua/blogs.git
   branch: master
+
+admin:
+  deployCommand: 'hexo deploy'
