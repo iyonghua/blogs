@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://iyonghua.github.io/blogs
 root: /blogs/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -104,3 +104,38 @@ deploy:
 
 admin:
   deployCommand: 'hexo deploy'
+
+
+# hexo-neat
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:  
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js' 
+
+markdown_it_plus:
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  langPrefix:
+  linkify: true
+  typographer:
+  quotes: “”‘’
+  plugins:
+    - plugin:
+        name: markdown-it-katex
+        enable: false
+    - plugin:
+        name: markdown-it-mark
+        enable: false  

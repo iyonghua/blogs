@@ -31,7 +31,7 @@ site:
     width: 40
     height: 40
     url: ../images/logo.png
-  title: weiyonghua's # 页面title
+  title: weiyonghua's blogs# 页面title
   favicon: /favicon.png
   board: <p>欢迎交流与分享经验!</p> # 站点公告
   copyright: false # 底部版权信息
@@ -47,20 +47,20 @@ config:
 
 # Pagination
 pagination:
-  number: true
+  number: false
   prev: 
-    alwayShow: true
+    alwayShow: false
   next:
-    alwayShow: true
+    alwayShow: false
 
 # Sidebar
 sidebar: right
 widgets:
-  - board  
-  - category
-  - tag
-  - tagcloud
+  # - board  
   - archive
+  - tagcloud
+  - category
+  # - tag
   - recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
@@ -83,7 +83,7 @@ search:
 
 # Donate
 donate:
-  enable: true
+  enable: false
   # 微信打赏
   wechatpay:
     qrcode: images/donate/wechatpayimg.png
@@ -96,13 +96,13 @@ donate:
 # Share
 # weibo,qq,qzone,wechat,tencent,douban,diandian,facebook,twitter,google,linkedin
 share:
-  enable: true  # 是否启用分享
+  enable: false  # 是否启用分享
   sites: weibo,qq,wechat,facebook,twitter  # PC端显示的分享图标
   mobile_sites: weibo,qq,qzone  # 移动端显示的分享图标
 
 # Github
 github: 
-  username: cofess  # github username
+  username: iyonghua  # github username
 
 # Comment
 # Gitment
@@ -189,19 +189,19 @@ profile:
   author: weiyonghua
   author_title: 路漫漫其修远兮 吾将上下而求索
   author_description: 个人简介。
-  location: Shenzhen, China
-  follow: https://github.com/cofess
+  location: Nanjing, China
+  follow: https://github.com/iyonghua
   # Social Links
   social:
     links:
-      github: https://github.com/cofess
-      weibo: http://weibo.com/cofess
+      github: https://github.com/iyonghua
+      weibo: http://weibo.com/iyonghua
       twitter: https://twitter.com/iwebued
       # facebook: /
       # dribbble: /
-      behance: https://www.behance.net/cofess
+      behance: https://www.behance.net/iyonghua
       rss: atom.xml
-    link_tooltip: true # enable the social link tooltip, options: true, false
+    link_tooltip: false # enable the social link tooltip, options: true, false
   # My Skills 
   skills:
     Git: ★★★☆☆
@@ -213,11 +213,11 @@ profile:
     平面设计: ★★★☆☆
   # My Personal Links
   links:
-    Github: https://github.com/cofess
-    Blog: http://blog.cofess.com
-    微博: http://weibo.com/cofess
-    花瓣: http://huaban.com/cofess
-    Behance: https://www.behance.net/cofess
+    Github: https://github.com/iyonghua
+    Blog: http://blog.iyonghua.com
+    微博: http://weibo.com/iyonghua
+    花瓣: http://huaban.com/iyonghua
+    Behance: https://www.behance.net/iyonghua
   # My Personal Labels
   labels:
     - 前端
@@ -232,5 +232,5 @@ profile:
       date: 2016
   # My Personal Projects
   projects:
-    cofess/gulp-startpro: https://github.com/cofess/gulp-startpro
-    cofess/hexo-theme-pure: https://github.com/cofess/hexo-theme-pure
+    iyonghua/gulp-startpro: https://github.com/iyonghua/gulp-startpro
+    iyonghua/hexo-theme-pure: https://github.com/iyonghua/hexo-theme-pure
