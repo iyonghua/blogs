@@ -2,8 +2,6 @@ title: intelij idea 自定义live template总结
 author: weiyonghua
 tags:
   - idea
-categories:
-  - 奇淫巧技
 date: 2019-12-31 16:13:00
 ---
 ![](https://oscimg.oschina.net/oscnet/3e8565df04a0dc263cdb70e136fc2099ea6.jpg)

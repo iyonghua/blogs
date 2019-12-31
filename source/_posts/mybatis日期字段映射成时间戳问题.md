@@ -4,7 +4,6 @@ tags:
   - mybatis
 categories:
   - 后端
-  - FAQ
 date: 2019-12-31 16:12:00
 ---
 解决方法：

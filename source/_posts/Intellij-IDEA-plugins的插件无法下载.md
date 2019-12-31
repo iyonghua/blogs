@@ -4,7 +4,6 @@ tags:
   - idea
 categories:
   - FAQ
-  - 奇淫巧技
 date: 2019-12-31 16:18:00
 ---
 在Intellij IDEA plugins下无法下载插件，显示超时。

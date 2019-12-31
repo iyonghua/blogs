@@ -3,7 +3,6 @@ author: weiyonghua
 tags:
   - qttabbar
 categories:
-  - 奇淫巧技
   - FAQ
 date: 2019-12-31 16:00:00
 ---
