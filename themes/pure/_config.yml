@@ -4,9 +4,9 @@ menu:
   Archives: archives
   Categories: categories
   Tags: tags
-  Repository: repository
+  # Repository: repository
   #Books: 豆瓣书单
-  Links: links
+  # Links: links
   About: about
 
 # Enable/Disable menu icons
