@@ -2,7 +2,7 @@ title: 国内加速访问Github的办法，超级简单
 author: weiyonghua
 tags: []
 categories:
-  - github
+  - 奇淫巧技
 date: 2019-12-30 17:35:00
 ---
 # 国内加速访问Github的办法，超级简单
