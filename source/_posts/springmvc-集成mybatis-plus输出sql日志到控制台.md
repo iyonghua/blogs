@@ -27,3 +27,15 @@ date: 2020-01-08 18:11:00
 log4j.properties
 
     log4j.logger.com.xxx.xxx.mapper=TRACE
+
+方法3：在mybatis-config.xml中配置日志实现
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE configuration 
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    <configuration>
+	    <settings>
+	    	<setting name="logImpl" value="STDOUT_LOGGING"/>
+	    </settings>
+    </configuration>
